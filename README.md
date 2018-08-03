@@ -69,6 +69,41 @@ Retorno
   500 - Arquivo fora dos padrões
   406 - Campos com valores inválidos
   
-- Para consultar POI's por proximidades: POST http://localhost:8084/yx-inc/api/poi/consulta
+-  POST http://localhost:8084/yx-inc/api/poi/consulta
+Requisição
+{
+  "d_max":10,
+  "coordenada_x":10,
+  "coordenada_y":20  
+}
+
+Retorno
+
+[
+    {
+        "id": 1,
+        "poi": "Lanchonete",
+        "coordenada_x": 27,
+        "coordenada_y": 12
+    },
+    {
+        "id": 3,
+        "poi": "Joalheria",
+        "coordenada_x": 15,
+        "coordenada_y": 12
+    },
+    {
+        "id": 5,
+        "poi": "Pub",
+        "coordenada_x": 12,
+        "coordenada_y": 8
+    },
+    {
+        "id": 6,
+        "poi": "Supermercado",
+        "coordenada_x": 23,
+        "coordenada_y": 6
+    }
+]
 ```
 
