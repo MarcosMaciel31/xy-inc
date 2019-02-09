@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/yx-inc">
-    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="1000" maxIdle="300" maxWait="1000" name="jdbc/BancoDados" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/xyinc?autoReconnect=true" username="root"/>
+    <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="1000" maxIdle="300" maxWait="1000" name="jdbc/BancoDados" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/xyinc?useTimezone=true&amp;serverTimezone=UTC" username="root"/>
 </Context>
 
