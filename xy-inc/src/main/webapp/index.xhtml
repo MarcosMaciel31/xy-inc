@@ -1,12 +1,63 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
     <h:head>
-        <title>RESTFull Api</title>
+        <title>RESTFull Api  -Crud Exemple</title>
     </h:head>
     <h:body>
-        Serviços de pontos de interesse XY Inc
+        <header>
+            Serviços de pontos de interesse XY Inc
+            <nav>
+                <ul>
+                    <li>Link 1</li>
+                    <li>Link 2 </li>
+                    <li>Link 3 </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h:form id="frmTabela">
+                <h:panelGroup id="pngCadastro">
+                    <label>Nome do POI</label>&#160;&#160;
+                    <p:inputText value="#{pOIController.objSelecionado.poi}" >
+                    </p:inputText><br/><br/>
+                    <label>Coordenada X</label>&#160;
+                    <p:inputText value="#{pOIController.objSelecionado.coordenada_x}" >
+                    </p:inputText><br/><br/>
+                    <label>Coordenada Y</label>&#160;
+                    <p:inputText value="#{pOIController.objSelecionado.coordenada_y}" >
+                    </p:inputText><br/> <br/>
+                    <p:commandButton disabled="#{pOIController.objSelecionado.id > 0 ? 'true':'false'}" value="Salvar" update=":frmTabela:dtTabela pngCadastro" actionListener="#{pOIController.salvar()}"/>
+                    <p:commandButton disabled="#{pOIController.objSelecionado.id > 0 ? 'false':'true'}"  value="Alterar" update=":frmTabela:dtTabela pngCadastro" actionListener="#{pOIController.alterar()}"/>
+                </h:panelGroup>
+                <br/>
+                <br/>
+                <p:dataTable id="dtTabela" value="#{pOIController.objLista}" var="listPoi" >
+                    <p:column headerText="Nome Poi">
+                        #{listPoi.poi}
+                    </p:column>
+                    <p:column headerText="Coordenada X">
+                        #{listPoi.coordenada_x}
+                    </p:column>
+                    <p:column headerText="Coordenada Y">
+                        #{listPoi.coordenada_y}
+                    </p:column>
+                    <p:column headerText="Editar">
+                        <p:commandButton value="Editar" actionListener="#{pOIController.selecionaObjeto(listPoi)}" update=":frmTabela:pngCadastro" />
+                    </p:column>
+                    <p:column headerText="Deletar">
+                        <p:commandButton value="Deletar" actionListener="#{pOIController.deletar(listPoi)}" update="dtTabela" />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </main>
+        <br/>
+        <footer>
+            @Copright Marcos Vinicius Maciel
+        </footer>
     </h:body>
 </html>
 
