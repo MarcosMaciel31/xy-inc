@@ -1,4 +1,4 @@
-Teste para a vaga de Back-End Developer
+Crud Exemplo - Cadastro de POI(Point Of Interest)
 ==========================
 
 # Dependências
@@ -17,6 +17,13 @@ Teste para a vaga de Back-End Developer
 
 Para funcionar o projeto é necessário que tenha um banco de dados criado com o nome xyinc
 no MySQL
+
+# Sobre o Projeto
+```
+-O Projeto foi criado apenas para exemplo de como funciona o Hibernate com JSF e RESTFull.
+-Ao iniciar o projeto uma página para testar os cadastros dos POI's será exibida.
+-Para testar a opção de WEBSERVICE RESTFULL deve ter instalado na maquina o sistema PostMan para testes de Serviços.
+```
 
 # Configurando banco de dados no projeto
 ```
